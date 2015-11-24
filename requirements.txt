@@ -1,0 +1,5 @@
+devpi-client>=2.3.2
+devpi-common>=2.0.8
+devpi-server>=2.5.3
+devpi-web>=2.5.0
+requests>=2.6.2
