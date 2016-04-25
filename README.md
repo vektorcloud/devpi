@@ -6,7 +6,7 @@ Alpine-based Docker build providing pypi package caching and local index with de
 
 Bring up the devpi server with:
 ```bash
-docker run -d --name devpi -p 3141:3141 vektorcloud/devpi
+docker run -d --name devpi -p 3141:3141 quay.io/vektorcloud/devpi:latest
 ```
 
 and add the following to your ~/.pip/pip.conf:

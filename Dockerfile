@@ -1,17 +1,12 @@
-FROM alpine:latest
+FROM quay.io/vektorcloud/python2:latest
 
-ENV DEVPI_SERVERDIR /mnt DEVPI_CLIENTDIR /tmp/devpi-client
-
-RUN apk add --update python && \
-    apk add wget ca-certificates && \
-    wget "https://bootstrap.pypa.io/get-pip.py" -O /dev/stdout | python && \
-    apk del wget ca-certificates && \
-    rm /var/cache/apk/*
+ENV DEVPI_SERVERDIR /devpi
 
 COPY requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-VOLUME /mnt
-EXPOSE 3141
 COPY run.sh /run.sh
+
+EXPOSE 3141
+VOLUME /devpi
 CMD /bin/bash /run.sh
