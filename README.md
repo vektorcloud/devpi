@@ -1,12 +1,12 @@
 # docker-devpi
 
-Docker build providing pypi package caching and local index with devpi
+Alpine-based Docker build providing pypi package caching and local index with devpi
 
 ## Usage
 
 Bring up the devpi server with:
 ```bash
-docker run -d --name devpi -p 3141:3141 vektorlab/devpi
+docker run -d --name devpi -p 3141:3141 vektorcloud/devpi
 ```
 
 and add the following to your ~/.pip/pip.conf:
@@ -31,4 +31,4 @@ devpi upload
 
 ## Troubleshooting
 
-If you don't have an loadbalancer providing SSL to devpi, you may get an SSL warning when trying to install packages. This can be circumvented by appending `--trusted-host <DEVPI HOST>` to your pip install commands, e.g `pip install --trusted-host localhost pytest`
+If you don't have an loadbalancer providing SSL to devpi, you may get an SSL warning when trying to install packages. This can be circumvented during testing by appending `--trusted-host <DEVPI HOST>` to your pip install commands, e.g `pip install --trusted-host localhost pytest`
