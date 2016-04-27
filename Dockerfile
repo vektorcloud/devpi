@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/python2:latest
+FROM quay.io/vektorcloud/python:2
 
 ENV DEVPI_SERVERDIR /devpi
 
