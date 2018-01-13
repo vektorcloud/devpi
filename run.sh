@@ -1,8 +1,9 @@
-#!/bin/bash
-set -e
-set -x
+#!/bin/sh
+set -ex
 
-[[ -f $DEVPI_SERVERDIR/.serverversion ]] || initialize=yes
+initialize=0
+
+[[ -f $DEVPI_SERVERDIR/.serverversion ]] || { initialize=1; devpi-server --init; }
 
 devpi-server --start --host 0.0.0.0 --port 3141
 
