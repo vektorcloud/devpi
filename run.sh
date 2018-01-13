@@ -1,6 +1,15 @@
 #!/bin/sh
-set -ex
 
+case $1 in
+  "") echo ;;
+  "health")
+    (curl -s --connect-timeout 3 localhost:3141 1> /dev/null) || exit 1
+    echo "ok"; exit 0
+    ;;
+  *) echo "unknown command arg: $1"; exit 1 ;;
+esac
+
+set -ex
 initialize=0
 
 [[ -f $DEVPI_SERVERDIR/.serverversion ]] || { initialize=1; devpi-server --init; }

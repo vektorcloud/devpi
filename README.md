@@ -29,6 +29,10 @@ devpi use dev && \
 devpi upload
 ```
 
+## Healthcheck
+
+A healthcheck is included in this image -- to disable, start the container with the `--no-healthcheck` option
+
 ## Troubleshooting
 
 If you don't have an loadbalancer providing SSL to devpi, you may get an SSL warning when trying to install packages. This can be circumvented during testing by appending `--trusted-host <DEVPI HOST>` to your pip install commands, e.g `pip install --trusted-host localhost pytest`
