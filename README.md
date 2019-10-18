@@ -39,4 +39,4 @@ A healthcheck is included in this image -- to disable, start the container with 
 
 If you don't have an loadbalancer providing SSL to devpi, you may get an SSL warning when trying to install packages. This can be circumvented during testing by appending `--trusted-host <DEVPI HOST>` to your pip install commands, e.g `pip install --trusted-host localhost pytest`
 
-[circleci]: https://img.shields.io/circleci/project/github/vektorcloud/devpi.svg "devpi"
+[circleci]: https://img.shields.io/circleci/build/gh/vektorcloud/devpi?color=1dd6c9&logo=CircleCI&logoColor=1dd6c9&style=for-the-badge "devpi"
