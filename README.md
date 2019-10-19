@@ -1,6 +1,6 @@
 # docker-devpi
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/devpi)
 
 Alpine-based Docker build providing pypi package caching and local index with devpi
 
